@@ -25,8 +25,8 @@ window.addEventListener("scroll", changeTextColorOnScroll);
 
  
 document.addEventListener("DOMContentLoaded", function() {
-  let Title = document.getElementsByClassName("header-menu-title")
-  let Options = document.getElementsByClassName("header-menu-options");
+  let Title = document.getElementById("berries")
+  let Options = document.getElementById("berries-o");
 
 
     Title.addEventListener("mouseenter", function() {
@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", function() {
         Options.style.display = "none";
     });
 });
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  let Title = document.getElementById("learn");
+  let Options = document.getElementById("learn-o");
+
+
+    Title.addEventListener("mouseenter", function() {
+        Options.style.display = "block";
+        Options.style.top = (Title.offsetTop + Title.offsetHeight) + "px";
+        Options.style.left = Title.offsetLeft + Title.offsetWidth / 2 - Options.offsetWidth / 2 + "px";
+    });
+
+    Options.addEventListener("mouseleave", function() {
+        Options.style.display = "none";
+    });
+});
+
 const button = document.getElementById('my-button');
 button.addEventListener('mouseover', function() {
   this.style.backgroundColor = "#942828";
